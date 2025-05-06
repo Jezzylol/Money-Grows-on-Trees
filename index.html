@@ -3,9 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Global Forest Watch</title>
+    <style>
+        :root {
+            --olive: #403F2B;
+            --cream: #FEFAF1;
+            --ivory: #F3F1C4;
+            --dark-olive: #29291F;
+        }
+        
+        body {
+            font-family: 'Avenir Light', Arial, sans-serif;
+            background-color: var(--olive);
+            color: var(--dark-olive);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        header {
+            border-bottom: 1px solid var(--cream);
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 3rem;
+            margin: 1rem 0;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            color: var(--ivory);
+        }
+        
+        .subtitle {
+            font-family: 'Fraunces', serif;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--ivory);
+        }
+        
+        .content-row {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            align-items: flex-start;
+        }
+        
+        .text-content {
+            flex: 1;
+            padding: 1.5rem;
+            background-color: var(--ivory);
+            border-radius: 2px;
+            box-shadow: 0 2px 8px rgba(64, 63, 43, 0.1);
+        }
+        
+        .image-placeholder {
+            flex: 1;
+            min-height: 400px;
+            background-color: var(--ivory);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px dashed var(--dark-olive);
+            border-radius: 2px;
+        }
+        
+        .counter-container {
+            background-color: white;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 2px;
+            box-shadow: 0 3px 10px rgba(64, 63, 43, 0.1);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--dark-olive);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .content-row {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Avenir+Light&display=swap" rel="stylesheet">
 </head>
 <body>
-    <iframe title='Percent of wild forests left' src='https://www.theworldcounts.com/embeds/counters/106?background_color=white&color=black&font_family=%22Helvetica+Neue%22%2C+Arial%2C+sans-serif&font_size=14' style='border: none' height='100' width='300'></iframe>
+    <div class="page-container">
+        <header>
+            <h1>Money Grows on Trees</h1>
+            <p class="subtitle">Profits Grow As Forests Fall</p>
+        </header>
+
+        <div class="counter-container">
+            <iframe title='Percent of wild forests left' src='https://www.theworldcounts.com/embeds/counters/106?background_color=transparent&color=403F2B&font_family=Avenir+Light%2C+Arial%2C+sans-serif&font_size=18' style='border: none' height='150' width='450'></iframe>
+        </div>
+        
+        <div class="content-row">
+            <div class="text-content">
+                <p>Our planet's ancient forests are disappearing at an alarming rate. These vital ecosystems, which have stood for millennia, are being cleared at a pace of over 10 million hectares per year - equivalent to 27 soccer fields every minute.</p>
+                <p>Wild forests regulate our climate, purify our air and water, and provide habitat for countless species. Their loss represents one of the greatest environmental challenges of our time.</p>
+                <p>This live counter tracks the percentage of original wild forest cover remaining worldwide. The data comes from satellite monitoring and ground surveys conducted by leading conservation organizations.</p>
+            </div>
+            
+            <div class="image-placeholder">
+                <p>[Your forest image will appear here]</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Data sourced from The World Counts and Global Forest Watch</p>
+        </footer>
+    </div>
 </body>
 </html>
