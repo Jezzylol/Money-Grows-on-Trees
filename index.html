@@ -6,35 +6,78 @@
     <title>Money Grows on Trees</title>
     <link rel="stylesheet" href="mogt.css">
     <style>
-        .counter-container {
-    background-image:
+        .carousel {
+            background-image:
         linear-gradient(to bottom, var(--olive) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.6) 80%, var(--olive) 100%),
         url('https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=2250&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
     color: var(--ivory);
     text-align: center;
-    padding: 6rem 1rem;
-    width: 100vw;
-    min-height: 100vh;
+    min-height: 70vh;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
-    position: relative;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  width: 100vw;
+  padding: 2rem 0;
 }
 
-        .counter-container iframe {
-            position: relative;
-            z-index: 1;
-            border: none;
-            width: 100%;
-            max-width: 800px;
-            height: 250px;
-        }
+.carousel-slide {
+  display: none;
+  width: 100%;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel iframe {
+    position: relative;
+    z-index: 1;
+    border: none;
+    height: 250px;
+    width: 100vw;
+    max-width: 100%;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: var(--ivory);
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+@media (max-width: 600px) {
+  .carousel iframe {
+    height: 180px;
+  }
+
+  .carousel-button {
+    font-size: 1.5rem;
+  }
+}
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Avenir+Light&display=swap" rel="stylesheet">
 </head>
@@ -52,18 +95,52 @@
                         </div>
                     </div>
             <h1>Money Grows on Trees</h1>
-            <p class="subtitle">Profits Grow As Forests Fall</p>
+            <p class="subtitle">Artwork by Jessica Xu</p>
         </header>
 
-  <div class="counter-container">
-            <iframe title='Percent of wild forests left' src='https://www.theworldcounts.com/embeds/counters/106?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=60'></iframe>
-        </div>
+        <div class="carousel">
+            <button class="carousel-button prev" onclick="changeSlide(-1)">❮</button>
+          
+            <div class="carousel-slide active">
+              <iframe title="Forests left" src="https://www.theworldcounts.com/embeds/counters/106?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=60"></iframe>
+            </div>
+          
+            <div class="carousel-slide">
+              <iframe title="Trees cut down" src="https://www.theworldcounts.com/embeds/counters/93?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=55"></iframe>
+            </div>
+          
+            <div class="carousel-slide">
+              <iframe title="CO₂ emissions" src="https://www.theworldcounts.com/embeds/counters/114?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=60"></iframe>
+            </div>
+          
+            <button class="carousel-button next" onclick="changeSlide(1)">❯</button>
+          </div>
+          
         
 
         <div class="gallery-buttons">
             <a class="gallery-button" href="hiddencosts.html">Explore Forest Impact</a>
-            <a class="gallery-button" href="art.html">View My Art</a>
+            <a class="gallery-button" href="art.html">My Art</a>
         </div>
+
+        <script>
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.carousel-slide');
+          
+            function showSlide(index) {
+              slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+              });
+            }
+          
+            function changeSlide(direction) {
+              currentSlide = (currentSlide + direction + slides.length) % slides.length;
+              showSlide(currentSlide);
+            }
+          
+            showSlide(currentSlide);
+          </script>
+          
 
         <footer>
             <p>Data sourced from The World Counts and Global Forest Watch</p>
