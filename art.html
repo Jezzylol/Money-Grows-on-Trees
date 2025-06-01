@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>My Art</title>
     <link rel="stylesheet" href="mogt.css">
     <style>
          .content-row {
@@ -21,16 +21,16 @@
             box-shadow: 0 2px 8px rgba(64, 63, 43, 0.1);
         }
         
-        .image-placeholder {
-            flex: 1;
-            min-height: 400px;
-            background-color: var(--ivory);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px dashed var(--dark-olive);
-            border-radius: 2px;
-        }
+        .my-art-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
     </style>
 </head>
 <body>
@@ -49,17 +49,14 @@
             <h1>Money Grows on Trees</h1>
             <p class="subtitle">Profits Grow As Forests Fall</p>
         </header>
-
-    <div class="content-row">
-        <div class="text-content">
-            <p>Our planet's ancient forests are disappearing at an alarming rate. These vital ecosystems, which have stood for millennia, are being cleared at a pace of over 10 million hectares per year - equivalent to 27 soccer fields every minute.</p>
-            <p>Wild forests regulate our climate, purify our air and water, and provide habitat for countless species. Their loss represents one of the greatest environmental challenges of our time.</p>
-            <p>This live counter tracks the percentage of original wild forest cover remaining worldwide. The data comes from satellite monitoring and ground surveys conducted by leading conservation organizations.</p>
-        </div>
         
-        <div class="image-placeholder">
-            <p>[Your forest image will appear here]</p>
-        </div>
+        <img src="mogt.jpg" alt="My Art" class="my-art-image">
+        <div class="content-row">
+            <div class="text-content">
+                <p>I was inspired to make this artwork after reading an article that shocked me: how Earth’s support systems will collapse in 2050 if we don’t drastically change the rate at which we consume resources. It made me think about how disconnected we are from the consequences of our everyday mindless purchases. Every barcode we scan costs more than just our money, it fells forests and destroys habitats. The number under the barcode in my art (46,171,400) is the area of green land left on Earth in square kilometres, and it’s getting smaller every day. My art is also interactive; the barcode can also be scanned using a barcode scanning mobile app, and it’ll open a URL to a website I made. The website has live data about forests, and information about how common items fuel deforestation. It can be accessed through this link: https://jezzylol.github.io/Money-Grows-on-Trees/ 
+                    My goal isn’t just to express the message that consumerism contributes to deforestation, but to invite viewers to engage with it and maybe even question what we take for granted.</p>
+                
+            </div>
     </div>
 </body>
 </html>
