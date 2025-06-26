@@ -6,28 +6,25 @@
     <title>Money Grows on Trees</title>
     <link rel="stylesheet" href="mogt.css">
     <style>
-        .carousel {
-            background-image:
-        linear-gradient(to bottom, var(--olive) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.6) 80%, var(--olive) 100%),
-        url('https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=2250&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-size: cover;
-    background-position: center;
-    color: var(--ivory);
-    text-align: center;
-    min-height: 70vh;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  width: 100vw;
-  padding: 2rem 0;
+.carousel {
+  background-image:
+    linear-gradient(to bottom, var(--olive) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.6) 80%, var(--olive) 100%),
+    url('https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=2250&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  color: var(--ivory);
+  text-align: center;
+  min-height: 70vh;
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
+
 
 .carousel-slide {
   display: none;
@@ -39,13 +36,14 @@
 }
 
 .carousel iframe {
-    position: relative;
-    z-index: 1;
-    border: none;
-    height: 250px;
-    width: 100vw;
-    max-width: 100%;
+  position: relative;
+  z-index: 1;
+  border: none;
+  width: 100%;
+  aspect-ratio: 4 / 1.2; /* ~wide banner shape */
+  max-height: 100%;
 }
+
 
 .carousel-button {
   position: absolute;
@@ -102,15 +100,15 @@
             <button class="carousel-button prev" onclick="changeSlide(-1)">❮</button>
           
             <div class="carousel-slide active">
-              <iframe title="Forests left" src="https://www.theworldcounts.com/embeds/counters/106?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=60"></iframe>
+              <iframe title="Forests left" src="https://www.theworldcounts.com/embeds/counters/106?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=40"></iframe>
             </div>
           
             <div class="carousel-slide">
-              <iframe title="Trees cut down" src="https://www.theworldcounts.com/embeds/counters/93?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=55"></iframe>
+              <iframe title="Trees cut down" src="https://www.theworldcounts.com/embeds/counters/93?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=40"></iframe>
             </div>
           
             <div class="carousel-slide">
-              <iframe title="CO₂ emissions" src="https://www.theworldcounts.com/embeds/counters/114?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=60"></iframe>
+              <iframe title="CO₂ emissions" src="https://www.theworldcounts.com/embeds/counters/114?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=40"></iframe>
             </div>
           
             <button class="carousel-button next" onclick="changeSlide(1)">❯</button>
