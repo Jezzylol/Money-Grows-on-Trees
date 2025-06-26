@@ -1,148 +1,206 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Money Grows on Trees</title>
-    <link rel="stylesheet" href="mogt.css">
-    <style>
-.carousel {
-  background-image:
-    linear-gradient(to bottom, var(--olive) 0%, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0.6) 80%, var(--olive) 100%),
-    url('https://images.unsplash.com/photo-1599940824399-b87987ceb72a?q=80&w=2250&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  background-size: cover;
-  background-position: center;
-  color: var(--ivory);
-  text-align: center;
-  min-height: 70vh;
-  width: 100%;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
 
+        :root {
+            --olive: #403F2B;
+            --cream: #FEFAF1;
+            --ivory: #F3F1C4;
+            --dark-olive: #29291F;
+        }
 
-.carousel-slide {
-  display: none;
-  width: 100%;
-}
+        body {
+            font-family: 'Avenir Light', Arial, sans-serif;
+            background-color: var(--olive);
+            color: var(--dark-olive);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-.carousel-slide.active {
-  display: block;
-}
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-.carousel iframe {
-  position: relative;
-  z-index: 1;
-  border: none;
-  width: 100%;
-  aspect-ratio: 4 / 1.2; /* ~wide banner shape */
-  max-height: 100%;
-}
+        header {
+            border-bottom: 1px solid var(--cream);
+            padding-bottom: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+            padding: 1.5rem 1rem;
+            text-align: center;
 
+        }
 
-.carousel-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.4);
-  border: none;
-  color: var(--ivory);
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.carousel-button.prev {
-  left: 1rem;
-}
-
-.carousel-button.next {
-  right: 1rem;
-}
-
-@media (max-width: 600px) {
-  .carousel iframe {
-    height: 180px;
-  }
-
-  .carousel-button {
-    font-size: 1.5rem;
-  }
-}
-
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Avenir+Light&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="page-container">
-        <header>
-            <div class="page-container">
-                <header>
-                    <div class="menu">
-                        <button class="menu-button">Menu</button>
-                        <div class="menu-list">
-                            <a href="index.html">Home</a>
-                            <a href="hiddencosts.html">Forest Impact</a>
-                            <a href="art.html">My Art</a>
-                        </div>
-                    </div>
-            <h1>Money Grows on Trees</h1>
-            <p class="subtitle">Artwork by Jessica Xu</p>
-        </header>
-
-        <div class="carousel">
-            <button class="carousel-button prev" onclick="changeSlide(-1)">❮</button>
+        .header-top {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 1.5rem;
+          }
+          .menu {
+            position: relative;
+          }
           
-            <div class="carousel-slide active">
-              <iframe title="Forests left" src="https://www.theworldcounts.com/embeds/counters/106?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=40"></iframe>
-            </div>
+          .menu-button {
+            background: var(--dark-olive);
+            color: var(--ivory);
+            padding: 0.5rem 1rem;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+          }
           
-            <div class="carousel-slide">
-              <iframe title="Trees cut down" src="https://www.theworldcounts.com/embeds/counters/93?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=40"></iframe>
-            </div>
+          .menu-list {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background: var(--dark-olive);
+            top: 100%;
+            left: 0;
+            z-index: 10;
+            border-radius: 5px;
+          }
           
-            <div class="carousel-slide">
-              <iframe title="CO₂ emissions" src="https://www.theworldcounts.com/embeds/counters/114?background_color=transparent&color=khaki&font_family=verdana%2C+timesnewroman%2C+serif&font_size=40"></iframe>
-            </div>
+          .menu-list a {
+            padding: 0.75rem 1rem;
+            color: var(--ivory);
+            text-decoration: none;
+          }
           
-            <button class="carousel-button next" onclick="changeSlide(1)">❯</button>
-          </div>
+          .menu:hover .menu-list {
+            display: flex;
+          }
           
+          /* Mobile responsiveness */
+          @media (max-width: 600px) {
+            .header-top {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0.5rem;
+            }
+          
+            .menu-button {
+              font-size: 0.9rem;
+            }
+          
+            h1 {
+              font-size: 2rem;
+              margin-top: 1rem;
+            }
+          
+            .subtitle {
+              font-size: 1rem;
+            }
+            .gallery-button {
+                font-size: 1.2rem;
+                padding: 1.5rem;
+            }
+          }
+                    
+
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-weight: 600;
+            font-size: 3rem;
+            margin: 1rem 0;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            color: var(--ivory);
+            text-align: center;
+        }
+
+        .subtitle {
+            font-family: 'Fraunces', serif;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: var(--ivory);
+            text-align: center;
+        }
+
+        .menu {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .menu-button {
+            font-size: 1rem;
+            cursor: pointer;
+            background-color: var(--dark-olive);
+            color: var(--ivory);
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .menu-list {
+            
+            flex-direction: column;
+            background: var(--dark-olive);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 10;
+            border-radius: 5px;
+            display: none;
+            background-color: var(--cream);
+            border: 1px solid var(--dark-olive);
+            padding: 0.5rem 0;
+
+        }
         
+        
+        .menu-list a {
+            display: block;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: var(--dark-olive);
+            font-weight: bold;
+        }
 
-        <div class="gallery-buttons">
-            <a class="gallery-button" href="hiddencosts.html">Explore Forest Impact</a>
-            <a class="gallery-button" href="art.html">My Art</a>
-        </div>
+        .menu:hover .menu-list {
+            display: flex;}
 
-        <script>
-            let currentSlide = 0;
-            const slides = document.querySelectorAll('.carousel-slide');
-          
-            function showSlide(index) {
-              slides.forEach((slide, i) => {
-                slide.classList.toggle('active', i === index);
-              });
-            }
-          
-            function changeSlide(direction) {
-              currentSlide = (currentSlide + direction + slides.length) % slides.length;
-              showSlide(currentSlide);
-            }
-          
-            showSlide(currentSlide);
-          </script>
-          
+        .menu:hover .menu-list,
+        .menu:focus-within .menu-list {
+            display: block;
+        }
 
-        <footer>
-            <p>Data sourced from The World Counts and Global Forest Watch</p>
-        </footer>
-    </div>
-</body>
-</html>
+        .gallery-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .gallery-button {
+            background-color: var(--ivory);
+            color: var(--dark-olive);
+            padding: 2rem 3rem;
+            font-size: 1.5rem;
+            font-family: 'Fraunces', serif;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(64, 63, 43, 0.2);
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .gallery-button:hover {
+            background-color: var(--cream);
+            transform: scale(1.05);
+        }
+
+
+        footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--ivory);
+            font-size: 0.9rem;
+            color: var(--ivory);
+        }
+
