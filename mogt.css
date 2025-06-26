@@ -26,7 +26,78 @@
             padding-bottom: 2rem;
             margin-bottom: 3rem;
             position: relative;
+            padding: 1.5rem 1rem;
+            text-align: center;
+
         }
+
+        .header-top {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 1.5rem;
+          }
+          .menu {
+            position: relative;
+          }
+          
+          .menu-button {
+            background: var(--dark-olive);
+            color: var(--ivory);
+            padding: 0.5rem 1rem;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+          }
+          
+          .menu-list {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background: var(--dark-olive);
+            top: 100%;
+            left: 0;
+            z-index: 10;
+            border-radius: 5px;
+          }
+          
+          .menu-list a {
+            padding: 0.75rem 1rem;
+            color: var(--ivory);
+            text-decoration: none;
+          }
+          
+          .menu:hover .menu-list {
+            display: flex;
+          }
+          
+          /* Mobile responsiveness */
+          @media (max-width: 600px) {
+            .header-top {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 0.5rem;
+            }
+          
+            .menu-button {
+              font-size: 0.9rem;
+            }
+          
+            h1 {
+              font-size: 2rem;
+              margin-top: 1rem;
+            }
+          
+            .subtitle {
+              font-size: 1rem;
+            }
+            .gallery-button {
+                font-size: 1.2rem;
+                padding: 1.5rem;
+            }
+          }
+                    
 
         h1 {
             font-family: 'Fraunces', serif;
@@ -128,26 +199,8 @@
             text-align: center;
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid var(--dark-olive);
+            border-top: 1px solid var(--ivory);
             font-size: 0.9rem;
             color: var(--ivory);
         }
 
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-        
-            .subtitle {
-                font-size: 1rem;
-            }
-        
-            .gallery-button {
-                font-size: 1.2rem;
-                padding: 1.5rem;
-            }
-        
-            .menu-button {
-                font-size: 0.9rem;
-            }
-        }
